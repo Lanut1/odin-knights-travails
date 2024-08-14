@@ -1,3 +1,5 @@
+const knightGraph = {};
+
 function getKnightsMoves(x, y, boardSize = 8) {
   const moves = [
     [x + 1, y + 2], [x + 1, y - 2],
@@ -7,12 +9,11 @@ function getKnightsMoves(x, y, boardSize = 8) {
   ];
   
   const validMoves = moves.filter(([nx, ny]) =>
-    nx >= 0 && nx < boardSize && ny >= 0 && ny < boardSize
+    nx >= 0 && nx < boardSize && ny >= 0 && ny < boardSize;
   )
 
   return validMoves;
 }
-const knightGraph = {};
 
 function makeGraph(boardSize = 8) {
   for (let x = 0; x < boardSize; x++) {
@@ -21,8 +22,6 @@ function makeGraph(boardSize = 8) {
     }
   }
 }
-
-makeGraph();
 
 function knightMoves(start, end) {
   const queue = [[start]];
@@ -59,7 +58,8 @@ function printPath(path) {
   });
 }
 
+makeGraph();
+
 knightMoves([3, 3], [4, 3]);
 knightMoves([0,0],[7,7]);
 knightMoves([3,3],[0,0]);
-
